@@ -6,6 +6,10 @@ A local-first app that manages a film's visual world the way a design system man
 
 The loop: **generate → curate → promote → reference → generate.**
 
+![Generate screen with three entities selected and the payload preview showing reference caps](docs/screenshots/generate-payload-preview.webp)
+
+*The Generate screen, captured from a local dev run with three placeholder entities that have no references yet.*
+
 ## Quickstart
 
 ```bash
