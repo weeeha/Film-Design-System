@@ -81,3 +81,16 @@ SMOKE_GEMINI=1 npx vitest run tests/smoke-gemini.test.ts
 - **Style tokens are M2.** One seeded default token applies to every generation; the Tokens screen is a stub.
 - **Safari:** prompt textareas don't auto-grow (`field-sizing` is unsupported there). Cosmetic — they stay usable at their minimum height and scroll.
 - **Single user.** Generations run through one in-process serial queue; there's no auth, no multi-writer safety, and no cloud sync. A server restart marks any in-flight generation `failed` with "interrupted — retry".
+
+<!-- BEGIN:generation-family -->
+## Related repos
+
+<!-- TODO(Nick): one or two sentences, in your voice, on why these four belong together. -->
+
+| Repo | What it does |
+|---|---|
+| [Film Design System](https://github.com/weeeha/Image-Generation-Pipeline-) | Keeps characters, props and settings consistent across image generations |
+| [Video Generation Pipeline](https://github.com/weeeha/Video-Generation-Pipeline) | Seedance and Runway video generation with reusable reference packs |
+| [Audio Generation Pipeline](https://github.com/weeeha/Audio-Generation-Pipeline) | Local speech, voice cloning and sound effects |
+| Continuity Lab (private, in progress) | Finds and repairs inconsistencies between generated video shots |
+<!-- END:generation-family -->
