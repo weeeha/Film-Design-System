@@ -1,5 +1,13 @@
 # Film Design System
 
+**Problem.** A film's characters, props and settings have to look the same across hundreds of generated images, and each image model caps how many reference images it accepts.
+
+**Idea.** Manage the film's visual world like a design system. Entities own curated, role-labelled reference images (the canon), a shot picks entities and the app fits their references to the model's caps, and good outputs are promoted back into the reference set.
+
+**Built.** A local-first Next.js app on SQLite (Drizzle) with a library, a generate screen that previews the exact reference payload before a generation is spent, and a history screen that keeps each generation's final prompt and references. Gemini generation is verified live, and GPT Image 2 is registered but unavailable until its adapter is written. 29 commits on 7 days, Aug 2 to Oct 30, 2026.
+
+**Decision.** Gemini and GPT Image 2 get separate reference rules instead of one averaged limit. Gemini's per-category caps are filled, while OpenAI's shared pool of 16 is under-filled to 3 to 5 curated references, because references compete for influence there.
+
 A local-first app that manages a film's visual world the way a design system manages a product UI, and generates imagery against it.
 
 **Entities** — characters, props, settings — each own a curated set of **reference images** (the "canon"), labelled by role and ordered by priority. You compose a shot by picking entities and describing the scene; the app allocates their references within the image model's caps, assembles an exact prompt, calls the provider, and records complete lineage. Good outputs get **promoted** back into the reference set, so a character looks like the same character across hundreds of generations.
